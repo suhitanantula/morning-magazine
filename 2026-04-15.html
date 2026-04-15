@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morning Edition — Wednesday, April 15 2026 | Helix Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Space+Grotesk:wght@400;700&family=Courier+Prime&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Space+Grotesk:wght@400;700&family=Courier+Prime&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Fraunces', Georgia, serif;
+  background: #0D0D0D;
+  color: #F0EDE6;
+  min-height: 100vh;
+}
+
+.magazine {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── MASTHEAD ── */
+.masthead {
+  background: #0D0D0D;
+  color: #F0EDE6;
+  padding: 4rem 3rem 3rem;
+  border-bottom: 1px solid #2A2A2A;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 2rem;
+}
+
+.masthead__label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.masthead__date {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 1.1rem;
+  color: #666;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+.masthead__title {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #F0EDE6;
+}
+
+.masthead__title em {
+  font-style: italic;
+  color: #C4785A;
+}
+
+.masthead__tagline {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 1rem;
+  font-weight: 300;
+  max-width: 50ch;
+  line-height: 1.5;
+}
+
+/* ── STORY BASE ── */
+.story {
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 5rem;
+}
+
+.story + .story {
+  border-top: 1px solid rgba(128,128,128,0.15);
+}
+
+/* HERO */
+.story--hero {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.story--hero .story__watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--num-size, 28vw);
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  color: var(--num-color, #E8E0D0);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+  letter-spacing: -0.05em;
+}
+.story--hero .story__content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+.story--hero .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.story--hero .story__title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.story--hero .story__body {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 65ch;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* DARK */
+.story--dark .story__top-num {
+  position: absolute;
+  top: -0.15em;
+  right: 1.5rem;
+  font-size: var(--num-size, 22vw);
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+}
+.story--dark .story__content {
+  max-width: 700px;
+}
+.story--dark .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.story--dark .story__title {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.story--dark .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  line-height: 1.7;
+  opacity: 0.75;
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+/* STAMP */
+.story--stamp {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.story--stamp .story__stamp-num {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  border: 4px solid currentColor;
+  padding: 0.2em 0.4em;
+  font-family: 'Fraunces', serif;
+}
+.story--stamp .story__stamp-label {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.story--stamp .story__title {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.story--stamp .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  line-height: 1.7;
+  opacity: 0.8;
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+/* TERMINAL */
+.story--terminal {
+  font-family: 'Courier Prime', monospace;
+}
+.story--terminal .story__terminal-header {
+  font-size: 0.8rem;
+  color: #00CC88;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #1A3A1A;
+  padding-bottom: 1rem;
+}
+.story--terminal .story__num-color { color: #1A3A1A; }
+.story--terminal .story__title {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.story--terminal .story__body {
+  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+  line-height: 1.8;
+  opacity: 0.8;
+  max-width: 60ch;
+}
+
+/* NEWSPRINT */
+.story--newsprint {
+  padding: 4rem 4rem;
+}
+.story--newsprint .story__newsprint-inner {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.story--newsprint .story__num-col {
+  font-size: 5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 0.1em;
+  border-right: 2px solid currentColor;
+  padding-right: 2rem;
+}
+.story--newsprint .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.story--newsprint .story__title {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+.story--newsprint .drop-cap {
+  font-size: 1.3em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.05em;
+  margin-top: 0.1em;
+  font-weight: 900;
+}
+.story--newsprint .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+  opacity: 0.8;
+  max-width: 60ch;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+/* SAGE */
+.story--sage .story__side-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.story--sage .story__big-num {
+  font-size: 7rem;
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.story--sage .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.story--sage .story__title {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.story--sage .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.75;
+  opacity: 0.8;
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+/* BIGSTAT */
+.story--bigstat .story__bigstat-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.story--bigstat .story__giant-num {
+  font-size: clamp(8rem, 18vw, 18rem);
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+.story--bigstat .story__text-block {}
+.story--bigstat .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.story--bigstat .story__title {
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.story--bigstat .story__body {
+  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+  opacity: 0.75;
+  max-width: 55ch;
+  font-weight: 300;
+}
+
+/* INK */
+.story--ink .story__ink-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.story--ink .story__ink-num {
+  font-size: 4rem;
+  font-weight: 900;
+  font-family: 'Fraunces', serif;
+  line-height: 1;
+}
+.story--ink .story__ink-source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.story--ink .story__title {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.story--ink .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+  line-height: 1.75;
+  opacity: 0.75;
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+/* FLARE */
+.story--flare .story__flare-inner {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.story--flare .story__num-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: 'Fraunces', serif;
+  color: #1A1000;
+  flex-shrink: 0;
+}
+.story--flare .story__source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.story--flare .story__title {
+  font-size: clamp(1.6rem, 3.5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.story--flare .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.7;
+  opacity: 0.8;
+  max-width: 60ch;
+  font-weight: 300;
+}
+
+/* SLATE */
+.story--slate .story__slate-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border-left: 4px solid currentColor;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.story--slate .story__slate-num {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Space Grotesk', monospace;
+  line-height: 1;
+}
+.story--slate .story__slate-source {
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.story--slate .story__title {
+  font-size: clamp(1.6rem, 3.5vw, 3.2rem);
+  font-weight: 700;
+  font-family: 'Space Grotesk', monospace;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+.story--slate .story__body {
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.7;
+  opacity: 0.75;
+  max-width: 60ch;
+  font-weight: 400;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: #0D0D0D;
+  color: #444;
+  padding: 3rem;
+  text-align: center;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-top: 1px solid #2A2A2A;
+}
+
+.footer a { color: #666; text-decoration: none; }
+.footer a:hover { color: #C4785A; }
+
+  </style>
+</head>
+<body>
+  <div class="magazine">
+
+    <!-- MASTHEAD -->
+    <header class="masthead">
+      <div>
+        <div class="masthead__label">Helix Lab Intelligence</div>
+        <h1 class="masthead__title">Morning<br><em>Edition</em></h1>
+        <p class="masthead__tagline">Daily curation of AI adoption signals, market intelligence, and strategic research — hand-selected for Helix Lab.</p>
+      </div>
+      <div>
+        <div class="masthead__date">Wednesday, April 15 2026</div>
+        <div class="masthead__date" style="margin-top:0.5rem; color:#444;">Issue 20260415</div>
+      </div>
+    </header>
+
+    <!-- STORIES -->
+    
+    <div class="story story--hero" style="background:#FAF7F2; color:#1A1A1A;">
+      <div class="story__watermark">01</div>
+      <div class="story__content">
+        <div class="story__source" style="color:#C4785A;">COMPETITIVE</div>
+        <h2 class="story__title">holaboss gained 159 stars in a day (2342 → 2501)</h2>
+        <p class="story__body">holaboss gained 159 stars in a day (2342 → 2501)</p>
+      </div>
+    </div>
+    <div class="story story--dark" style="background:#0F0F1A; color:#F0EDE6;">
+      <div class="story__top-num" style="color:rgba(255,255,255,0.04);">02</div>
+      <div class="story__content">
+        <div class="story__source" style="color:#E8C547;">COMPETITIVE</div>
+        <h2 class="story__title">New holaboss release: holaboss-desktop-2026.415.4</h2>
+        <p class="story__body">New holaboss release: holaboss-desktop-2026.415.4</p>
+      </div>
+    </div>
+    <div class="story story--stamp" style="background:#FFF5F0; color:#2D1B0E;">
+      <div class="story__stamp">
+        <div class="story__stamp-num" style="color:#D94F2B; border-color:#D94F2B;">03</div>
+        <div class="story__stamp-label" style="color:#D94F2B;">COMPETITIVE</div>
+      </div>
+      <div class="story__content">
+        <h2 class="story__title">crewai gained 86 stars in a day (48849 → 48935)</h2>
+        <p class="story__body">crewai gained 86 stars in a day (48849 → 48935)</p>
+      </div>
+    </div>
+    <div class="story story--terminal" style="background:#0D1A0D; color:#33FF33;">
+      <div class="story__terminal-header">
+        <span>$&nbsp;04&nbsp;//&nbsp;MOONSHOTS</span>
+      </div>
+      <div class="story__content">
+        <h2 class="story__title">&gt;&nbsp;Five Client Offer Ideas from Moonshots Signals
+
+Date: 2026-04-15
+Prepared for: Suhit / The Helix Lab</h2>
+        <p class="story__body">What it is:
+A 2-3 hour executive workshop that helps leaders redesign roles, workflows, governance, and decision-making for AI-native competition. Why it matters:
+Moonshots keeps showing that the mark</p>
+      </div>
+    </div>
+    <div class="story story--newsprint" style="background:#F5F0E8; color:#1C1C1C;">
+      <div class="story__newsprint-inner">
+        <div class="story__num-col" style="color:#D4C8B8;">05</div>
+        <div class="story__text-col">
+          <div class="story__source" style="color:#8B2020;">MOONSHOTS</div>
+          <h2 class="story__title"><span class="drop-cap" style="color:#8B2020;">S</span>tream
+
+Date: 2026-04-15
+Prepared for: Suhit / The Helix Lab
+
+## The point of view
+The mainstream AI</h2>
+          <p class="story__body">Too much of the market is focused on model launches, benchmarks, valuations, and hype cycles. Those things matter, but they are not the real decision problem for most organisations.</p>
+        </div>
+      </div>
+    </div>
+    <div class="story story--sage" style="background:#F0F5EE; color:#1E2E1C;">
+      <div class="story__side-layout">
+        <div class="story__big-num" style="color:#D4E4D0;">06</div>
+        <div class="story__content">
+          <div class="story__source" style="color:#4A7C4E;">MOONSHOTS</div>
+          <h2 class="story__title">Helix learning notes
+
+## Core pattern
+Moonshots keeps reinforcing that the market is shifting from "</h2>
+          <p class="story__body">AI adoption advice, but redesigning organisations, governance, roles, and workflows for AI-native competition. Strongest insights for our work
+
+### 1.</p>
+        </div>
+      </div>
+    </div>
+    <div class="story story--bigstat" style="background:#1A1A2E; color:#E8E0FF;">
+      <div class="story__bigstat-inner">
+        <div class="story__giant-num" style="color:#9B7FD4;">07</div>
+        <div class="story__text-block">
+          <div class="story__source" style="color:#9B7FD4;">LEAD-SIGNALS</div>
+          <h2 class="story__title">AI Transformation Lead Signals
+
+## Strong Signals (Primary) — High Precision
+
+1.</h2>
+          <p class="story__body">AI Transformation Lead Signals
+
+## Strong Signals (Primary) — High Precision
+
+1.</p>
+        </div>
+      </div>
+    </div>
+    <div class="story story--ink" style="background:#1C2535; color:#E8E4D8;">
+      <div class="story__ink-header">
+        <span class="story__ink-num" style="color:#5B8FA8;">08</span>
+        <span class="story__ink-source" style="color:#5B8FA8;">LEAD-SIGNALS</span>
+      </div>
+      <div class="story__content">
+        <h2 class="story__title">CAIO / Chief AI Officer created**
+   - New C-suite role specifically for AI
+   - Evidence: LinkedIn </h2>
+        <p class="story__body">CAIO / Chief AI Officer created**
+   - New C-suite role specifically for AI
+   - Evidence: LinkedIn announcement, press release, board filing
+
+2.</p>
+      </div>
+    </div>
+    <div class="story story--flare" style="background:#FFFCF0; color:#1A1000;">
+      <div class="story__flare-inner">
+        <div class="story__num-circle" style="background:#E6A800;">09</div>
+        <div class="story__content">
+          <div class="story__source" style="color:#E6A800; font-weight:700;">LEAD-SIGNALS</div>
+          <h2 class="story__title">Explicit AI-first public mandate**
+   - CEO or board explicitly said "AI-first" or "AI transformatio</h2>
+          <p class="story__body">Explicit AI-first public mandate**
+   - CEO or board explicitly said "AI-first" or "AI transformation" in public comms
+   - Evidence: Earnings call, investor day, press interview
+
+3.</p>
+        </div>
+      </div>
+    </div>
+    <div class="story story--slate" style="background:#2A2A2A; color:#E0E0E0;">
+      <div class="story__slate-top" style="border-color:#FF6B35;">
+        <span class="story__slate-num" style="color:#FF6B35;">10</span>
+        <span class="story__slate-source" style="color:#FF6B35;">LEAD-SIGNALS</span>
+      </div>
+      <div class="story__content">
+        <h2 class="story__title">AI strategy, AI initiatives in board materials
+   - Evidence: Board announcements, director LinkedIn</h2>
+        <p class="story__body">AI strategy, AI initiatives in board materials
+   - Evidence: Board announcements, director LinkedIn posts about AI, AGM AI discussions
+   - *Why powerful: Board pressure forces executive action*
+
+4.</p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Generated by Yoda · Helix Lab · Wednesday, April 15 2026</p>
+      <p style="margin-top:0.5rem;"><a href="https://helixlab.ai">helixlab.ai</a> · AI Strategy &amp; Adoption Intelligence</p>
+    </footer>
+
+  </div>
+</body>
+</html>
