@@ -1,670 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morning Edition — Wednesday, April 15 2026 | Helix Lab</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Space+Grotesk:wght@400;700&family=Courier+Prime&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=Space+Grotesk:wght@400;700&family=Courier+Prime&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helix Morning Edition — 2026-04-15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Courier+Prime&family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+<style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { font-size: 16px; }
-
-body {
-  font-family: 'Fraunces', Georgia, serif;
-  background: #0D0D0D;
-  color: #F0EDE6;
-  min-height: 100vh;
-}
-
-.magazine {
+body { background: #0a0a0f; color: #f0ede6; font-family: 'Inter', sans-serif; line-height: 1.6; }
+.hero-header {
+  padding: 80px 60px 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   max-width: 1400px;
   margin: 0 auto;
 }
-
-/* ── MASTHEAD ── */
-.masthead {
-  background: #0D0D0D;
-  color: #F0EDE6;
-  padding: 4rem 3rem 3rem;
-  border-bottom: 1px solid #2A2A2A;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 2rem;
-}
-
-.masthead__label {
-  font-family: 'Space Grotesk', monospace;
+.hero-header .edition {
+  font-family: 'Fraunces', serif;
   font-size: 0.75rem;
   letter-spacing: 0.3em;
-  color: #888;
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
 }
-
-.masthead__date {
-  font-family: 'Space Grotesk', monospace;
+.hero-header h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  background: linear-gradient(135deg, #f0ede6 0%, #a0a0b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+.hero-header .tagline {
   font-size: 1.1rem;
-  color: #666;
-  letter-spacing: 0.05em;
-  text-align: right;
-}
-
-.masthead__title {
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  color: #F0EDE6;
-}
-
-.masthead__title em {
+  color: rgba(255,255,255,0.45);
   font-style: italic;
-  color: #C4785A;
-}
-
-.masthead__tagline {
-  font-size: 1.1rem;
-  color: #666;
-  margin-top: 1rem;
-  font-weight: 300;
-  max-width: 50ch;
+  max-width: 700px;
   line-height: 1.5;
 }
-
-/* ── STORY BASE ── */
-.story {
-  position: relative;
-  overflow: hidden;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 5rem;
-}
-
-.story + .story {
-  border-top: 1px solid rgba(128,128,128,0.15);
-}
-
-/* HERO */
-.story--hero {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.story--hero .story__watermark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: var(--num-size, 28vw);
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  color: var(--num-color, #E8E0D0);
-  line-height: 1;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.6;
-  letter-spacing: -0.05em;
-}
-.story--hero .story__content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-.story--hero .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-.story--hero .story__title {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-.story--hero .story__body {
-  font-size: clamp(1rem, 1.5vw, 1.4rem);
-  line-height: 1.6;
-  opacity: 0.8;
-  max-width: 65ch;
-  margin: 0 auto;
-  font-weight: 300;
-}
-
-/* DARK */
-.story--dark .story__top-num {
-  position: absolute;
-  top: -0.15em;
-  right: 1.5rem;
-  font-size: var(--num-size, 22vw);
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  pointer-events: none;
-}
-.story--dark .story__content {
-  max-width: 700px;
-}
-.story--dark .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-.story--dark .story__title {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-.story--dark .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
-  line-height: 1.7;
-  opacity: 0.75;
-  max-width: 60ch;
-  font-weight: 300;
-}
-
-/* STAMP */
-.story--stamp {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-.story--stamp .story__stamp-num {
-  font-size: 5rem;
-  font-weight: 900;
-  line-height: 1;
-  border: 4px solid currentColor;
-  padding: 0.2em 0.4em;
-  font-family: 'Fraunces', serif;
-}
-.story--stamp .story__stamp-label {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.story--stamp .story__title {
-  font-size: clamp(1.8rem, 4vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-}
-.story--stamp .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
-  line-height: 1.7;
-  opacity: 0.8;
-  max-width: 60ch;
-  font-weight: 300;
-}
-
-/* TERMINAL */
-.story--terminal {
-  font-family: 'Courier Prime', monospace;
-}
-.story--terminal .story__terminal-header {
-  font-size: 0.8rem;
-  color: #00CC88;
-  margin-bottom: 2rem;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid #1A3A1A;
-  padding-bottom: 1rem;
-}
-.story--terminal .story__num-color { color: #1A3A1A; }
-.story--terminal .story__title {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
-}
-.story--terminal .story__body {
-  font-size: clamp(0.9rem, 1.3vw, 1.1rem);
-  line-height: 1.8;
-  opacity: 0.8;
-  max-width: 60ch;
-}
-
-/* NEWSPRINT */
-.story--newsprint {
-  padding: 4rem 4rem;
-}
-.story--newsprint .story__newsprint-inner {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-.story--newsprint .story__num-col {
-  font-size: 5rem;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  line-height: 1;
-  padding-top: 0.1em;
-  border-right: 2px solid currentColor;
-  padding-right: 2rem;
-}
-.story--newsprint .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-.story--newsprint .story__title {
-  font-size: clamp(1.6rem, 3.5vw, 3rem);
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1.2rem;
-}
-.story--newsprint .drop-cap {
-  font-size: 1.3em;
-  float: left;
-  line-height: 0.8;
-  margin-right: 0.05em;
-  margin-top: 0.1em;
-  font-weight: 900;
-}
-.story--newsprint .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-  line-height: 1.75;
-  opacity: 0.8;
-  max-width: 60ch;
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-}
-
-/* SAGE */
-.story--sage .story__side-layout {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-.story--sage .story__big-num {
-  font-size: 7rem;
-  font-family: 'Fraunces', serif;
-  font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.05em;
-}
-.story--sage .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-.story--sage .story__title {
-  font-size: clamp(1.6rem, 3.5vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-}
-.story--sage .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-  line-height: 1.75;
-  opacity: 0.8;
-  max-width: 60ch;
-  font-weight: 300;
-}
-
-/* BIGSTAT */
-.story--bigstat .story__bigstat-inner {
+.magazine-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.story--bigstat .story__giant-num {
-  font-size: clamp(8rem, 18vw, 18rem);
-  font-family: 'Fraunces', serif;
+.story {
+  position: relative;
+  padding: 60px 50px;
+  border-right: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  overflow: hidden;
+  min-height: 400px;
+}
+.story:nth-child(2n) { border-right: none; }
+.story-num {
+  position: absolute;
+  top: -10px;
+  right: 10px;
   font-weight: 900;
-  line-height: 0.85;
-  letter-spacing: -0.05em;
-}
-.story--bigstat .story__text-block {}
-.story--bigstat .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-}
-.story--bigstat .story__title {
-  font-size: clamp(1.5rem, 3vw, 2.8rem);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
-}
-.story--bigstat .story__body {
-  font-size: clamp(0.95rem, 1.3vw, 1.15rem);
-  line-height: 1.7;
-  opacity: 0.75;
-  max-width: 55ch;
-  font-weight: 300;
-}
-
-/* INK */
-.story--ink .story__ink-header {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-.story--ink .story__ink-num {
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: 'Fraunces', serif;
   line-height: 1;
+  pointer-events: none;
+  user-select: none;
 }
-.story--ink .story__ink-source {
-  font-family: 'Space Grotesk', monospace;
+.story-content { position: relative; z-index: 1; }
+.story-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.category-tag {
   font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 4px 10px;
+  border-radius: 4px;
 }
-.story--ink .story__title {
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+.story-link {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
 }
-.story--ink .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
-  line-height: 1.75;
-  opacity: 0.75;
-  max-width: 60ch;
-  font-weight: 300;
-}
-
-/* FLARE */
-.story--flare .story__flare-inner {
-  display: flex;
-  gap: 4rem;
-  align-items: center;
-}
-.story--flare .story__num-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.5rem;
-  font-weight: 900;
+.story-link:hover { color: rgba(255,255,255,0.8); }
+.story-title {
   font-family: 'Fraunces', serif;
-  color: #1A1000;
-  flex-shrink: 0;
-}
-.story--flare .story__source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
-.story--flare .story__title {
-  font-size: clamp(1.6rem, 3.5vw, 3.2rem);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-}
-.story--flare .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+.story-body p {
+  font-size: 0.88rem;
   line-height: 1.7;
-  opacity: 0.8;
-  max-width: 60ch;
-  font-weight: 300;
+  margin-bottom: 12px;
+  opacity: 0.85;
 }
-
-/* SLATE */
-.story--slate .story__slate-top {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  border-left: 4px solid currentColor;
-  padding-left: 1.5rem;
-  margin-bottom: 2rem;
-}
-.story--slate .story__slate-num {
-  font-size: 3.5rem;
-  font-weight: 700;
-  font-family: 'Space Grotesk', monospace;
-  line-height: 1;
-}
-.story--slate .story__slate-source {
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-.story--slate .story__title {
-  font-size: clamp(1.6rem, 3.5vw, 3.2rem);
-  font-weight: 700;
-  font-family: 'Space Grotesk', monospace;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.2rem;
-}
-.story--slate .story__body {
-  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
-  line-height: 1.7;
-  opacity: 0.75;
-  max-width: 60ch;
+.story-body .body-first {
+  font-size: 0.95rem;
+  opacity: 1;
   font-weight: 400;
 }
-
-/* ── FOOTER ── */
-.footer {
-  background: #0D0D0D;
-  color: #444;
-  padding: 3rem;
-  text-align: center;
-  font-family: 'Space Grotesk', monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  border-top: 1px solid #2A2A2A;
+.why-matters {
+  margin-top: 20px;
+  padding: 14px 18px;
+  border-left: 3px solid rgba(255,255,255,0.15);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  opacity: 0.7;
+  font-style: normal;
 }
-
-.footer a { color: #666; text-decoration: none; }
-.footer a:hover { color: #C4785A; }
-
-  </style>
+/* Layout variants */
+.story.hero { background: #FAF7F2; }
+.story.hero .story-num { color: #E8E0D0; }
+.story.hero .story-title { color: #1A1A1A; }
+.story.hero .story-body p { color: #333; }
+.story.hero .why-matters { border-color: #C4785A; color: #333; }
+.story.dark { background: #0F0F1A; }
+.story.dark .story-body p { color: rgba(240,237,230,0.75); }
+.story.stamp { background: #FFF5F0; }
+.story.stamp .story-num { color: #FFE0D3; }
+.story.stamp .story-title { color: #2D1B0E; }
+.story.stamp .story-body p { color: #3D2B1E; }
+.story.terminal { background: #0D1A0D; font-family: 'Courier Prime', monospace; }
+.story.terminal .story-body p { color: #33FF33; }
+.story.terminal .story-title { color: #00CC88; font-family: 'Courier Prime', monospace; }
+.story.newsprint { background: #F5F0E8; }
+.story.newsprint .story-num { color: #D4C8B8; }
+.story.newsprint .story-title { color: #1C1C1C; font-family: 'Playfair Display', serif; }
+.story.newsprint .story-body p { color: #2C2C2C; }
+.story.newsprint .story-body .body-first::first-letter {
+  font-size: 3.5em; float: left; line-height: 0.8;
+  margin: 4px 8px 0 0; font-family: 'Playfair Display', serif;
+  color: #8B2020;
+}
+.story.sage { background: #F0F5EE; }
+.story.sage .story-title { color: #1E2E1C; }
+.story.sage .story-body p { color: #2E3E2C; }
+.story.bigstat { background: #1A1A2E; }
+.story.bigstat .story-num { font-size: 20vw !important; top: -5vh; }
+.story.bigstat .story-body p { color: rgba(232,224,255,0.8); }
+.story.ink { background: #1C2535; }
+.story.ink .story-title { color: #E8E4D8; font-family: 'Fraunces', serif; }
+.story.ink .story-body p { color: rgba(232,228,216,0.75); }
+.story.flare { background: #FFFCF0; }
+.story.flare .story-num { color: #FFE880; }
+.story.flare .story-title { color: #1A1000; }
+.story.flare .story-body p { color: #2A2000; }
+.story.slate { background: #2A2A2A; }
+.story.slate .story-title { color: #E0E0E0; font-family: 'Space Grotesk', sans-serif; }
+.story.slate .story-body p { color: rgba(224,224,224,0.75); }
+/* Footer */
+.magazine-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.magazine-footer a { color: rgba(255,255,255,0.35); text-decoration: none; }
+.magazine-footer a:hover { color: rgba(255,255,255,0.7); }
+@media (max-width: 768px) {
+  .magazine-grid { grid-template-columns: 1fr; }
+  .story { border-right: none; padding: 40px 24px; }
+  .hero-header { padding: 50px 24px 40px; }
+  .magazine-footer { padding: 30px 24px; flex-direction: column; gap: 10px; text-align: center; }
+}
+</style>
 </head>
 <body>
-  <div class="magazine">
+<header class="hero-header">
+  <div class="edition">Morning Edition — 2026-04-15</div>
+  <h1>The Helix Lab<br>Intelligence Briefing</h1>
+  <p class="tagline">The agent framework wars are accelerating while the real opportunity shifts to operating-model redesign — the consulting space Helix is built for.</p>
+</header>
+<main class="magazine-grid">
 
-    <!-- MASTHEAD -->
-    <header class="masthead">
-      <div>
-        <div class="masthead__label">Helix Lab Intelligence</div>
-        <h1 class="masthead__title">Morning<br><em>Edition</em></h1>
-        <p class="masthead__tagline">Daily curation of AI adoption signals, market intelligence, and strategic research — hand-selected for Helix Lab.</p>
-      </div>
-      <div>
-        <div class="masthead__date">Wednesday, April 15 2026</div>
-        <div class="masthead__date" style="margin-top:0.5rem; color:#444;">Issue 20260415</div>
-      </div>
-    </header>
-
-    <!-- STORIES -->
-    
-    <div class="story story--hero" style="background:#FAF7F2; color:#1A1A1A;">
-      <div class="story__watermark">01</div>
-      <div class="story__content">
-        <div class="story__source" style="color:#C4785A;">COMPETITIVE</div>
-        <h2 class="story__title">holaboss gained 159 stars in a day (2342 → 2501)</h2>
-        <p class="story__body">holaboss gained 159 stars in a day (2342 → 2501)</p>
-      </div>
+<div class="story hero">
+  <div class="story-num" style="font-family: Fraunces; color: #E8E0D0; font-size: 28vw;">01</div>
+  <div class="story-content" style="color: #1A1A1A">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #0891B220; color: #0891B2; border: 1px solid #0891B240;">COMPETITIVE</span>
+      
     </div>
-    <div class="story story--dark" style="background:#0F0F1A; color:#F0EDE6;">
-      <div class="story__top-num" style="color:rgba(255,255,255,0.04);">02</div>
-      <div class="story__content">
-        <div class="story__source" style="color:#E8C547;">COMPETITIVE</div>
-        <h2 class="story__title">New holaboss release: holaboss-desktop-2026.415.4</h2>
-        <p class="story__body">New holaboss release: holaboss-desktop-2026.415.4</p>
-      </div>
-    </div>
-    <div class="story story--stamp" style="background:#FFF5F0; color:#2D1B0E;">
-      <div class="story__stamp">
-        <div class="story__stamp-num" style="color:#D94F2B; border-color:#D94F2B;">03</div>
-        <div class="story__stamp-label" style="color:#D94F2B;">COMPETITIVE</div>
-      </div>
-      <div class="story__content">
-        <h2 class="story__title">crewai gained 86 stars in a day (48849 → 48935)</h2>
-        <p class="story__body">crewai gained 86 stars in a day (48849 → 48935)</p>
-      </div>
-    </div>
-    <div class="story story--terminal" style="background:#0D1A0D; color:#33FF33;">
-      <div class="story__terminal-header">
-        <span>$&nbsp;04&nbsp;//&nbsp;MOONSHOTS</span>
-      </div>
-      <div class="story__content">
-        <h2 class="story__title">&gt;&nbsp;Five Client Offer Ideas from Moonshots Signals
-
-Date: 2026-04-15
-Prepared for: Suhit / The Helix Lab</h2>
-        <p class="story__body">What it is:
-A 2-3 hour executive workshop that helps leaders redesign roles, workflows, governance, and decision-making for AI-native competition. Why it matters:
-Moonshots keeps showing that the mark</p>
-      </div>
-    </div>
-    <div class="story story--newsprint" style="background:#F5F0E8; color:#1C1C1C;">
-      <div class="story__newsprint-inner">
-        <div class="story__num-col" style="color:#D4C8B8;">05</div>
-        <div class="story__text-col">
-          <div class="story__source" style="color:#8B2020;">MOONSHOTS</div>
-          <h2 class="story__title"><span class="drop-cap" style="color:#8B2020;">S</span>tream
-
-Date: 2026-04-15
-Prepared for: Suhit / The Helix Lab
-
-## The point of view
-The mainstream AI</h2>
-          <p class="story__body">Too much of the market is focused on model launches, benchmarks, valuations, and hype cycles. Those things matter, but they are not the real decision problem for most organisations.</p>
-        </div>
-      </div>
-    </div>
-    <div class="story story--sage" style="background:#F0F5EE; color:#1E2E1C;">
-      <div class="story__side-layout">
-        <div class="story__big-num" style="color:#D4E4D0;">06</div>
-        <div class="story__content">
-          <div class="story__source" style="color:#4A7C4E;">MOONSHOTS</div>
-          <h2 class="story__title">Helix learning notes
-
-## Core pattern
-Moonshots keeps reinforcing that the market is shifting from "</h2>
-          <p class="story__body">AI adoption advice, but redesigning organisations, governance, roles, and workflows for AI-native competition. Strongest insights for our work
-
-### 1.</p>
-        </div>
-      </div>
-    </div>
-    <div class="story story--bigstat" style="background:#1A1A2E; color:#E8E0FF;">
-      <div class="story__bigstat-inner">
-        <div class="story__giant-num" style="color:#9B7FD4;">07</div>
-        <div class="story__text-block">
-          <div class="story__source" style="color:#9B7FD4;">LEAD-SIGNALS</div>
-          <h2 class="story__title">AI Transformation Lead Signals
-
-## Strong Signals (Primary) — High Precision
-
-1.</h2>
-          <p class="story__body">AI Transformation Lead Signals
-
-## Strong Signals (Primary) — High Precision
-
-1.</p>
-        </div>
-      </div>
-    </div>
-    <div class="story story--ink" style="background:#1C2535; color:#E8E4D8;">
-      <div class="story__ink-header">
-        <span class="story__ink-num" style="color:#5B8FA8;">08</span>
-        <span class="story__ink-source" style="color:#5B8FA8;">LEAD-SIGNALS</span>
-      </div>
-      <div class="story__content">
-        <h2 class="story__title">CAIO / Chief AI Officer created**
-   - New C-suite role specifically for AI
-   - Evidence: LinkedIn </h2>
-        <p class="story__body">CAIO / Chief AI Officer created**
-   - New C-suite role specifically for AI
-   - Evidence: LinkedIn announcement, press release, board filing
-
-2.</p>
-      </div>
-    </div>
-    <div class="story story--flare" style="background:#FFFCF0; color:#1A1000;">
-      <div class="story__flare-inner">
-        <div class="story__num-circle" style="background:#E6A800;">09</div>
-        <div class="story__content">
-          <div class="story__source" style="color:#E6A800; font-weight:700;">LEAD-SIGNALS</div>
-          <h2 class="story__title">Explicit AI-first public mandate**
-   - CEO or board explicitly said "AI-first" or "AI transformatio</h2>
-          <p class="story__body">Explicit AI-first public mandate**
-   - CEO or board explicitly said "AI-first" or "AI transformation" in public comms
-   - Evidence: Earnings call, investor day, press interview
-
-3.</p>
-        </div>
-      </div>
-    </div>
-    <div class="story story--slate" style="background:#2A2A2A; color:#E0E0E0;">
-      <div class="story__slate-top" style="border-color:#FF6B35;">
-        <span class="story__slate-num" style="color:#FF6B35;">10</span>
-        <span class="story__slate-source" style="color:#FF6B35;">LEAD-SIGNALS</span>
-      </div>
-      <div class="story__content">
-        <h2 class="story__title">AI strategy, AI initiatives in board materials
-   - Evidence: Board announcements, director LinkedIn</h2>
-        <p class="story__body">AI strategy, AI initiatives in board materials
-   - Evidence: Board announcements, director LinkedIn posts about AI, AGM AI discussions
-   - *Why powerful: Board pressure forces executive action*
-
-4.</p>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <p>Generated by Yoda · Helix Lab · Wednesday, April 15 2026</p>
-      <p style="margin-top:0.5rem;"><a href="https://helixlab.ai">helixlab.ai</a> · AI Strategy &amp; Adoption Intelligence</p>
-    </footer>
-
+    <h2 class="story-title">GitHub Stars Show Developer Momentum Shifting to Agent Frameworks</h2>
+    <div class="story-body"><p class="body-first">MetaGPT leads the pack at 67,091 stars (gaining 47/day), followed by AutoGen at 57,099 and CrewAI at 48,935.</p>
+<p>All major agent frameworks posted significant daily gains (30-109 stars), signaling developer attention is consolidating around multi-agent orchestration rather than single-model tools.</p>
+<p>Langgraph and CrewAI both released new versions (1.1.7a2 and 1.14.2a4), indicating rapid iteration cycles.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> Framework momentum reveals where the developer ecosystem is building — Helix should align advisory offers to the tools clients are actually adopting.</blockquote>
   </div>
+</div>
+
+<div class="story dark">
+  <div class="story-num" style="font-family: Fraunces; color: rgba(255,255,255,0.04); font-size: 22vw;">02</div>
+  <div class="story-content" style="color: #F0EDE6">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #4F46E520; color: #4F46E5; border: 1px solid #4F46E540;">TOOLS</span>
+      
+    </div>
+    <h2 class="story-title">holaboss Breaks Out with 159 Stars in One Day</h2>
+    <div class="story-body"><p class="body-first">Desktop workspace tool holaboss surged from 2,342 to 2,501 stars in a single day — the fastest-growing project in the intelligence stream.</p>
+<p>New release holaboss-desktop-2026.415.4 dropped.</p>
+<p>While still small compared to agent frameworks, desktop-native AI tools represent an emerging category worth watching for client workspace strategy.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> Desktop AI workspaces could become the next client productivity battleground; Helix should monitor whether enterprises standardize on browser-based or desktop-native AI tools.</blockquote>
+  </div>
+</div>
+
+<div class="story stamp">
+  <div class="story-num" style="font-family: Fraunces; color: #FFE0D3; font-size: 18vw;">03</div>
+  <div class="story-content" style="color: #2D1B0E">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #D9770620; color: #D97706; border: 1px solid #D9770640;">STRATEGY</span>
+      
+    </div>
+    <h2 class="story-title">AI Strategy Is Now Operating-Model Strategy</h2>
+    <div class="story-body"><p class="body-first">The core Helix positioning: the market has moved past 'which tool?' questions into harder redesign territory — role reconfiguration, workflow automation decisions, governance architecture, and workflow integration.</p>
+<p>This shifts Helix from generic AI adoption advice into higher-value organizational redesign work.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> This is the thesis that justifies Helix's entire consulting stack — operating-model redesign is where fees are higher and competition is lower than generic AI education.</blockquote>
+  </div>
+</div>
+
+<div class="story terminal">
+  <div class="story-num" style="font-family: Courier Prime; color: #1A3A1A; font-size: 20vw;">04</div>
+  <div class="story-content" style="color: #33FF33">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #2563EB20; color: #2563EB; border: 1px solid #2563EB40;">MARKET</span>
+      
+    </div>
+    <h2 class="story-title">Value Shifts from Seats and Prompts to Work Completed</h2>
+    <div class="story-body"><p class="body-first">The market is moving from AI that assists at the edge of workflows to AI that executes meaningful workflow portions.</p>
+<p>The unit of value changes from seat counts and prompt volumes to cycle-time reduction, decision throughput, and quality improvement.</p>
+<p>Enterprise buyers are starting to care less about licences and more about outcomes delivered.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> Helix should frame all client value propositions in outcome terms — not tools deployed, but work completed, time saved, and risk controlled.</blockquote>
+  </div>
+</div>
+
+<div class="story newsprint">
+  <div class="story-num" style="font-family: Playfair Display; color: #D4C8B8; font-size: 20vw;">05</div>
+  <div class="story-content" style="color: #1C1C1C">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #7C3AED20; color: #7C3AED; border: 1px solid #7C3AED40;">PRODUCT</span>
+      
+    </div>
+    <h2 class="story-title">Persistent Agents Emerge as the Real Enterprise Wedge</h2>
+    <div class="story-body"><p class="body-first">Managed agents with persistent state, memory, and workflow execution authority are becoming the enterprise differentiator — not chatbot quality.</p>
+<p>The value conversation has shifted to persistent agents, workflow completion, oversight, and memory architecture.</p>
+<p>This aligns with Helix's agentic readiness positioning.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> Clients piloting copilots need to understand they are actually evaluating persistent agents; Helix's diagnostic offer addresses exactly this confusion.</blockquote>
+  </div>
+</div>
+
+<div class="story sage">
+  <div class="story-num" style="font-family: Fraunces; color: #D4E4D0; font-size: 20vw;">06</div>
+  <div class="story-content" style="color: #1E2E1C">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #05966920; color: #059669; border: 1px solid #05966940;">GOVERNMENT</span>
+      
+    </div>
+    <h2 class="story-title">Governance Becomes More Valuable as AI Gets More Capable</h2>
+    <div class="story-body"><p class="body-first">Counter-intuitive insight: better models increase rather than decrease the need for governance.</p>
+<p>As systems become agentic, organizations need operating rules — role definitions, authority levels, memory constraints, approval requirements, logging, and escalation logic.</p>
+<p>Governance stops being compliance and becomes delivery design.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> The AI Governance Sprint is directly justified — regulated sectors, government, and councils will pay premium for board-ready governance frameworks as autonomy increases.</blockquote>
+  </div>
+</div>
+
+<div class="story bigstat">
+  <div class="story-num" style="font-family: Fraunces; color: rgba(200,180,255,0.08); font-size: 35vw;">07</div>
+  <div class="story-content" style="color: #E8E0FF">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #D9770620; color: #D97706; border: 1px solid #D9770640;">STRATEGY</span>
+      
+    </div>
+    <h2 class="story-title">Workforce Transition Lacks Honest Practical Language</h2>
+    <div class="story-body"><p class="body-first">Most AI workforce conversations oscillate between hype (jobs dead) and denial (nothing changes).</p>
+<p>The market lacks structured language for task decomposition, augmentation vs automation mapping, supervision design, and role evolution.</p>
+<p>This creates a clear consulting opportunity for Helix to own workforce redesign.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> The Workforce Transition and Role Redesign Lab fills a genuine market gap — structured, practical language for labor transition that avoids both panic and denial.</blockquote>
+  </div>
+</div>
+
+<div class="story ink">
+  <div class="story-num" style="font-family: Fraunces; color: rgba(255,255,255,0.03); font-size: 20vw;">08</div>
+  <div class="story-content" style="color: #E8E4D8">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #DC262620; color: #DC2626; border: 1px solid #DC262640;">CLIENTS</span>
+      
+    </div>
+    <h2 class="story-title">Execution Bottleneck Beats Breakthrough in Enterprise AI</h2>
+    <div class="story-body"><p class="body-first">The breakthrough already exists.</p>
+<p>Most organizations do not need frontier models — they need process redesign, operating rhythm, governance, integration, adoption, and clear business ownership.</p>
+<p>The implementation bottleneck is the real constraint, not model quality.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> This validates Helix's positioning toward mid-market companies who don't need frontier access — they need help executing with tools they already have access to.</blockquote>
+  </div>
+</div>
+
+<div class="story flare">
+  <div class="story-num" style="font-family: Fraunces; color: #FFE880; font-size: 22vw;">09</div>
+  <div class="story-content" style="color: #1A1000">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #BE185D20; color: #BE185D; border: 1px solid #BE185D40;">SIGNALS</span>
+      
+    </div>
+    <h2 class="story-title">Every Organization Will Need an AI Role Architecture</h2>
+    <div class="story-body"><p class="body-first">Long-lived AI systems become valuable when they have defined roles, stable memory, clear scope, constraints, and handoff logic.</p>
+<p>Organizations will need frameworks for deploying digital workers with scope, memory, controls, and accountability — a new class of management problem that doesn't exist yet.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> This is a forward-looking market signal Helix can own — the framework for designing AI roles inside organizations is nascent and Helix can position early.</blockquote>
+  </div>
+</div>
+
+<div class="story slate">
+  <div class="story-num" style="font-family: Space Grotesk; color: #3A3A3A; font-size: 20vw;">10</div>
+  <div class="story-content" style="color: #E0E0E0">
+    <div class="story-meta">
+      <span class="category-tag" style="background: #0891B220; color: #0891B2; border: 1px solid #0891B240;">COMPETITIVE</span>
+      
+    </div>
+    <h2 class="story-title">New Lead Signal Framework Prioritizes Mid-Market AI Transformation</h2>
+    <div class="story-body"><p class="body-first">Helix developed a scoring framework for identifying AI transformation leads: requires 2 strong signals (CAIO creation, AI-first mandate, board pressure, new AI-mandated CEO, internal platform team) OR 1 strong + 2 medium signals.</p>
+<p>Target: mid-market $20M-$500M revenue companies, not ASX100 giants.</p>
+<p>Excludes companies with $50M+ AI budgets.</p>
+</div>
+    <blockquote class="why-matters">💡 <strong>Why it matters:</strong> This framework gives Helix a systematic way to prioritize BD efforts toward companies where Helix can actually win — mid-market organizations that can't do AI transformation alone.</blockquote>
+  </div>
+</div>
+
+</main>
+<footer class="magazine-footer">
+  <span>Synthesised from Helix Lab intelligence sources — 2026-04-15</span>
+  <span>Built by Yoda · <a href="https://suhitanantula.github.io/morning-magazine/" target="_blank">morning-magazine</a></span>
+</footer>
 </body>
 </html>
