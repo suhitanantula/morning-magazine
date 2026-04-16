@@ -1,0 +1,8 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "",
+  "devCommand": null,
+  "routes": [{ "handle": "filesystem" }, { "handle": "resource" }]
+}
