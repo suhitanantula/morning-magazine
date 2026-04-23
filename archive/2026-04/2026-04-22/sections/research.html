@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Research Digest — 2026-04-22 · Helix Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#09090f;color:#f0f0f5;font-family:'Inter',sans-serif;min-height:100vh}
+.backbar{padding:18px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.backbar a{color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.8rem;font-family:'Space Grotesk',sans-serif;transition:color .2s}
+.backbar a:hover{color:rgba(255,255,255,0.75)}
+.hero{padding:60px 48px 48px;max-width:1200px;margin:0 auto}
+.eyebrow{font-size:0.65rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:12px;font-family:'Space Grotesk',sans-serif}
+h1{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;background:linear-gradient(135deg,#f0f0f5,#8080a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:14px;line-height:1.1}
+.tagline{font-size:0.95rem;color:rgba(255,255,255,0.42);font-style:italic;max-width:600px;line-height:1.55}
+main{max-width:1200px;margin:0 auto;padding:0 48px 80px}
+.story{border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:32px 36px;margin-bottom:28px;background:rgba(255,255,255,0.025);transition:all .25s;position:relative;overflow:hidden}
+.story:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.11);transform:translateY(-2px)}
+.story::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent,#666)}
+.meta{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.cat{font-size:.6rem;font-weight:700;letter-spacing:.14em;padding:4px 12px;border-radius:4px;font-family:'Space Grotesk',sans-serif}
+.stitle{font-family:'Fraunces',serif;font-size:clamp(1.05rem,2vw,1.4rem);font-weight:700;line-height:1.25;margin-bottom:18px;color:#f0f0f5}
+.body{font-size:.88rem;line-height:1.78;color:rgba(240,240,245,.78);margin-bottom:22px}
+.body p{margin-bottom:11px}
+.body p:last-child{margin-bottom:0}
+.dig{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:8px;font-size:.8rem;font-weight:600;text-decoration:none;transition:all .2s;font-family:'Space Grotesk',sans-serif}
+.why{margin-top:18px;padding:14px 18px;border-left:3px solid rgba(255,255,255,.12);font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.5}
+.arcbar{margin-top:56px;padding-top:36px;border-top:1px solid rgba(255,255,255,.05);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.alabel{font-size:.73rem;color:rgba(255,255,255,.22);font-family:'Space Grotesk',sans-serif;margin-right:6px}
+.alink{padding:7px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;font-size:.75rem;color:rgba(255,255,255,.42);text-decoration:none;transition:all .2s;font-family:'Space Grotesk',sans-serif}
+.alink:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+.footer{padding:30px 48px;border-top:1px solid rgba(255,255,255,.04);font-size:.7rem;color:rgba(255,255,255,.16);display:flex;justify-content:space-between;max-width:1200px;margin:0 auto}
+.footer a{color:rgba(255,255,255,.22);text-decoration:none}
+.signal-card{border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:30px 34px;margin-bottom:24px;background:rgba(255,255,255,.025)}
+.signal-card:hover{background:rgba(255,255,255,.04)}
+.signal-meta{display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap}
+.str-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:4px;font-family:'Space Grotesk',sans-serif}
+.q-label{font-size:.72rem;color:rgba(255,255,255,.35);margin-bottom:10px;font-family:'Space Grotesk',sans-serif;margin-top:16px}
+.q-list{list-style:none;padding:0}
+.q-list li{padding:8px 14px;background:rgba(255,255,255,.04);border-radius:6px;margin-bottom:7px;font-size:.85rem;color:rgba(240,240,245,.75);border-left:3px solid rgba(255,255,255,.1)}
+@media(max-width:768px){.backbar,.hero,main,.footer{padding-left:20px;padding-right:20px}}
+</style></head>
+<body>
+<div class="backbar"><a href="../">← Back to Morning Briefing</a></div>
+<header class="hero">
+  <div class="eyebrow">🔬 RESEARCH DIGEST</div>
+  <h1>Research Digest</h1>
+  <p class="tagline">Helix already possesses the components for a Hindsight-like memory system—what it needs is a reflective belief architecture that separates observation from inference and enables systematic belief revision.</p>
+</header>
+<main>
+<article class="story" style="--accent:#D97706">
+  <div class="meta">
+    <span class="cat" style="background:#D9770618;color:#D97706;border:1px solid #D9770635">STRATEGY</span>
+  </div>
+  <h2 class="stitle">Helix Hindsight: Building a Reflective Belief System, Not Just Memory</h2>
+  <div class="body"><p>The Helix Lab internal architecture document reveals that the organization already has most raw components for a Hindsight-like capability: Helix Brain for semantic retrieval, Helix Mind for structured knowledge capture, Helix Listen for selective intake, and Hermes/Yoda workflows for ingestion.</p><p>The critical insight is that what separates raw data from memory is not storage but architecture—specifically separating what was observed, captured, inferred, and believed, with reflection at the center because beliefs can be wrong.</p></div>
+  <a href="https://brain.helixlab.com.au" target="_blank" class="dig" style="background:#D9770618;color:#D97706;border:1px solid #D9770635">🔗 Dig deeper · Helix Brain</a>
+  <div class="why"><strong style="color:rgba(255,255,255,.65)">💡 Why it matters:</strong> This directly informs The Helix Lab's product strategy: instead of building a new memory product, they should architect the belief revision layer that ties existing systems together.</div>
+</article>
+<article class="story" style="--accent:#D97706">
+  <div class="meta">
+    <span class="cat" style="background:#4F46E518;color:#4F46E5;border:1px solid #4F46E535">TOOLS</span>
+  </div>
+  <h2 class="stitle">Five Design Principles for Memory as a Reasoning Substrate</h2>
+  <div class="body"><p>The internal document extracts five key design principles from the Hindsight concept: memory should be a reasoning substrate (not just search), evidence and belief must be separated, memory improves through retain→recall→reflect cycles, long-term value comes from structured updating (not larger context windows), and memory must support explainability (why does the system think this now?).</p><p>These principles directly challenge conventional RAG architectures.</p></div>
+  <a href="https://brain.helixlab.com.au" target="_blank" class="dig" style="background:#D9770618;color:#D97706;border:1px solid #D9770635">🔗 Dig deeper · Helix Brain</a>
+  <div class="why"><strong style="color:rgba(255,255,255,.65)">💡 Why it matters:</strong> These principles give The Helix Lab a framework for evaluating whether their current memory infrastructure meets the bar for intelligent reasoning support.</div>
+</article>
+<article class="story" style="--accent:#D97706">
+  <div class="meta">
+    <span class="cat" style="background:#7C3AED18;color:#7C3AED;border:1px solid #7C3AED35">PRODUCT</span>
+  </div>
+  <h2 class="stitle">Three-Layer Memory Architecture Reveals Synthesis as Key Differentiator</h2>
+  <div class="body"><p>The document identifies three existing layers: Layer A (raw capture and artifact storage) contains rich but document-shaped data; Layer B (Helix Brain with pgvector semantic search across ~46k memories) acts as a cross-agent memory bus; Layer C (interpretation and synthesis) is identified as the real differentiator where raw material becomes useful interpretation.</p><p>The weakness: interpretations are stored as documents, not updateable belief objects.</p></div>
+  <a href="https://brain.helixlab.com.au" target="_blank" class="dig" style="background:#D9770618;color:#D97706;border:1px solid #D9770635">🔗 Dig deeper · Helix Brain</a>
+  <div class="why"><strong style="color:rgba(255,255,255,.65)">💡 Why it matters:</strong> For The Helix Lab, this reveals their strongest competitive advantage (synthesis) and their key technical gap (belief objects vs. documents) to address in the next architecture iteration.</div>
+</article></main>
+<footer class="footer">
+  <span>Research Digest · 2026-04-22 · Helix Lab Intelligence</span>
+  <a href="https://gh-magazine.vercel.app">helix-morning.pages.dev</a>
+</footer></body></html>
