@@ -3,28 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brief Archive &middot; Helix Lab</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<title>Archive — Helix Morning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{background:#0d0d12;color:#d8d8e2;font-family:Inter,sans-serif;min-height:100vh}
-.wrap{max-width:800px;margin:0 auto;padding:48px 24px}
-.back{font-size:.72rem;color:#374151;text-decoration:none;display:inline-block;margin-bottom:24px}
-.back:hover{color:#9ca3af}
-h1{font-family:Fraunces,serif;font-size:1.8rem;font-weight:800;color:#e8e8f0;margin-bottom:4px}
-.sub{font-size:.72rem;color:#374151;margin-bottom:36px;font-family:'Space Grotesk',sans-serif}
-.month{margin-bottom:24px}
-.month-label{font-size:.63rem;font-weight:700;letter-spacing:.12em;color:#374151;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:8px}
-.month-links{display:flex;gap:5px;flex-wrap:wrap}
-.alink{font-size:.69rem;color:#374151;text-decoration:none;padding:3px 8px;border:1px solid #1a1a26;border-radius:3px;font-family:'Space Grotesk',sans-serif;transition:color .15s,border-color .15s}
-.alink:hover{color:#9ca3af;border-color:#2e2e44}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:15px}
+body{background:#0C0C10;color:#D4D4D8;font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
+
+/* ── Top Bar ── */
+.topbar{background:#111116;border-bottom:1px solid #1E1E26;padding:10px 0;text-align:center}
+.topbar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.topbar-left{display:flex;align-items:center;gap:16px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:#F4F4F5;letter-spacing:-.02em}
+.logo-accent{color:#3B82F6}
+.topbar-nav{display:flex;gap:6px;align-items:center}
+.topbar-nav a{font-size:.72rem;color:#71717A;text-decoration:none;padding:4px 10px;border-radius:4px;font-family:'Space Grotesk',sans-serif;transition:all .15s}
+.topbar-nav a:hover{color:#F4F4F5;background:#1E1E26}
+.topbar-nav .active{color:#F4F4F5;background:#1E1E26}
+.topbar-right{font-size:.7rem;color:#52525B;font-family:'Space Grotesk',sans-serif}
+
+/* ── Date Nav ── */
+.datebar{max-width:1100px;margin:0 auto;padding:14px 24px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.datebar .date{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:#71717A;font-weight:600;letter-spacing:.03em}
+.datebar a{font-size:.75rem;color:#3B82F6;text-decoration:none;font-family:'Space Grotesk',sans-serif}
+.datebar a:hover{text-decoration:underline}
+
+/* ── Section ── */
+.section{max-width:1100px;margin:0 auto;padding:24px 24px 0}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #1E1E26}
+.section-icon{font-size:1.1rem}
+.section-name{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A1A1AA}
+.section-tagline{font-size:.78rem;color:#52525B;font-style:italic;margin-left:auto}
+.section-sep{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-sep hr{border:none;border-top:1px solid #1E1E26;margin:8px 0}
+
+/* ── Two-Column Layout ── */
+.story-grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
+@media(max-width:800px){.story-grid{grid-template-columns:1fr}}
+
+/* ── Featured Stories (Left Column) ── */
+.featured{}
+.featured-story{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #16161C}
+.featured-story:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.featured-headline{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:#F4F4F5;line-height:1.3;margin-bottom:6px}
+.featured-headline a{color:#F4F4F5;text-decoration:underline;text-decoration-color:#3B82F6;text-underline-offset:3px}
+.featured-headline a:hover{color:#FFF;text-decoration-color:#60A5FA}
+.featured-body{font-size:.82rem;color:#71717A;line-height:1.6;margin-bottom:8px}
+.featured-meta{display:flex;align-items:center;gap:8px;font-size:.7rem;color:#52525B}
+.featured-meta .source{color:#3B82F6;font-weight:600;text-decoration:none;font-family:'Space Grotesk',sans-serif}
+.featured-meta .source:hover{text-decoration:underline}
+.featured-meta .cat-tag{padding:2px 7px;border-radius:3px;font-size:.6rem;font-weight:600;letter-spacing:.04em;font-family:'Space Grotesk',sans-serif;text-transform:uppercase}
+
+/* ── River (Right Column) ── */
+.river{}
+.river-head{font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F3F46;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #1E1E26}
+.river-item{padding:8px 0;border-bottom:1px solid #111116;font-size:.8rem;line-height:1.45}
+.river-item:last-child{border-bottom:none}
+.river-item a.headline{color:#D4D4D8;text-decoration:none}
+.river-item a.headline:hover{color:#F4F4F5;text-decoration:underline}
+.river-item .source{color:#52525B;font-size:.7rem;margin-left:6px;font-family:'Space Grotesk',sans-serif}
+.river-item .time{color:#3F3F46;font-size:.65rem;margin-left:4px}
+
+/* ── Signals (special) ── */
+.signals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.signal-block{padding:16px;background:#111116;border:1px solid #1E1E26;border-radius:8px}
+.signal-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.85rem;color:#F4F4F5;margin-bottom:6px}
+.signal-desc{font-size:.78rem;color:#71717A;line-height:1.5;margin-bottom:8px}
+.signal-strength{font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;font-family:'Space Grotesk',sans-serif;display:inline-block}
+.signal-questions{list-style:none;margin-top:8px}
+.signal-questions li{font-size:.75rem;color:#52525B;padding:4px 0;padding-left:14px;position:relative}
+.signal-questions li::before{content:'→';position:absolute;left:0;color:#3B82F6}
+
+/* ── Archive ── */
+.archive-section{max-width:1100px;margin:0 auto;padding:28px 24px;border-top:1px solid #1E1E26}
+.archive-label{font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F3F46;margin-bottom:10px}
+.archive-links{display:flex;flex-wrap:wrap;gap:6px}
+.archive-links a{font-size:.72rem;color:#52525B;text-decoration:none;padding:4px 10px;background:#111116;border:1px solid #1E1E26;border-radius:4px;font-family:'Space Grotesk',sans-serif;transition:all .15s}
+.archive-links a:hover{color:#F4F4F5;border-color:#3B82F6}
+
+/* ── Footer ── */
+.footer{max-width:1100px;margin:0 auto;padding:20px 24px;border-top:1px solid #1E1E26;font-size:.65rem;color:#27272A;font-family:'Space Grotesk',sans-serif;text-align:center;margin-top:20px}
+
+/* ── No Data ── */
+.no-data{font-size:.8rem;color:#3F3F46;font-style:italic;padding:20px 0}
 </style>
 </head>
 <body>
-<div class="wrap">
-<a href="../" class="back">&#8592; Back to today</a>
-<h1>Brief Archive</h1>
-<p class="sub">13 briefs</p>
-<div class="month"><div class="month-label">May 2026</div><div class="month-links"><a href="2026-05/2026-05-01/index.html" class="alink">2026-05-01</a></div></div><div class="month"><div class="month-label">April 2026</div><div class="month-links"><a href="2026-04/2026-04-26/index.html" class="alink">2026-04-26</a><a href="2026-04/2026-04-25/index.html" class="alink">2026-04-25</a><a href="2026-04/2026-04-24/index.html" class="alink">2026-04-24</a><a href="2026-04/2026-04-23/index.html" class="alink">2026-04-23</a><a href="2026-04/2026-04-22/index.html" class="alink">2026-04-22</a><a href="2026-04/2026-04-21/index.html" class="alink">2026-04-21</a><a href="2026-04/2026-04-20/index.html" class="alink">2026-04-20</a><a href="2026-04/2026-04-19/index.html" class="alink">2026-04-19</a><a href="2026-04/2026-04-18/index.html" class="alink">2026-04-18</a><a href="2026-04/2026-04-17/index.html" class="alink">2026-04-17</a><a href="2026-04/2026-04-16/index.html" class="alink">2026-04-16</a><a href="2026-04/2026-04-15/index.html" class="alink">2026-04-15</a></div></div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="logo"><a href="../../index.html" style="color:#F4F4F5;text-decoration:none">HELIX <span class="logo-accent">MORNING</span></a></span>
+    </div>
+    <div class="topbar-right">Archive</div>
+  </div>
 </div>
+<div class="archive-section" style="margin-top:24px">
+  <div class="archive-label">13 Briefings</div>
+  <div class="archive-links">
+<a href="2026-05/2026-05-01/index.html">2026-05-01</a>
+<a href="2026-04/2026-04-26/index.html">2026-04-26</a>
+<a href="2026-04/2026-04-25/index.html">2026-04-25</a>
+<a href="2026-04/2026-04-24/index.html">2026-04-24</a>
+<a href="2026-04/2026-04-23/index.html">2026-04-23</a>
+<a href="2026-04/2026-04-22/index.html">2026-04-22</a>
+<a href="2026-04/2026-04-21/index.html">2026-04-21</a>
+<a href="2026-04/2026-04-20/index.html">2026-04-20</a>
+<a href="2026-04/2026-04-19/index.html">2026-04-19</a>
+<a href="2026-04/2026-04-18/index.html">2026-04-18</a>
+<a href="2026-04/2026-04-17/index.html">2026-04-17</a>
+<a href="2026-04/2026-04-16/index.html">2026-04-16</a>
+<a href="2026-04/2026-04-15/index.html">2026-04-15</a>
+  </div>
+</div>
+<div class="footer">Helix Lab Morning Intelligence — Archive</div>
 </body>
 </html>

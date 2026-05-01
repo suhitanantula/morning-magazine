@@ -3,182 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Helix Morning Briefing &#8212; 2026-05-01</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300..700&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+<title>Helix Morning — 2026-05-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:#0d0d12;color:#d8d8e2;font-family:'Inter',sans-serif;font-size:14px;line-height:1.5}
+html{font-size:15px}
+body{background:#0C0C10;color:#D4D4D8;font-family:'Inter',-apple-system,sans-serif;line-height:1.55}
 
-/* ── Top bar ── */
-.topbar{background:#0d0d12;border-bottom:1px solid #1e1e2e;padding:10px 24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100}
-.topbar-brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:800;color:#e8e8f0;white-space:nowrap}
-.topbar-date{font-size:.72rem;color:#4b5563;font-family:'Space Grotesk',sans-serif;white-space:nowrap}
-.topbar-nav{display:flex;gap:6px;margin-left:auto;align-items:center;flex-shrink:0}
-.topbar-nav a{font-size:.7rem;color:#4b5563;text-decoration:none;padding:3px 8px;border:1px solid #1e1e2c;border-radius:3px;font-family:'Space Grotesk',sans-serif;transition:color .15s,border-color .15s;white-space:nowrap}
-.topbar-nav a:hover{color:#a5a5c0;border-color:#2e2e44}
-.quicklinks{display:flex;gap:4px;flex-wrap:wrap}
-.quicklinks a{font-size:.66rem;color:#374151;text-decoration:none;padding:2px 7px;border:1px solid #1a1a24;border-radius:3px;font-family:'Space Grotesk',sans-serif;transition:color .15s,border-color .15s;white-space:nowrap}
-.quicklinks a:hover{color:#9ca3af;border-color:#2e2e40}
+/* ── Top Bar ── */
+.topbar{background:#111116;border-bottom:1px solid #1E1E26;padding:10px 0;text-align:center}
+.topbar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.topbar-left{display:flex;align-items:center;gap:16px}
+.logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;color:#F4F4F5;letter-spacing:-.02em}
+.logo-accent{color:#3B82F6}
+.topbar-nav{display:flex;gap:6px;align-items:center}
+.topbar-nav a{font-size:.72rem;color:#71717A;text-decoration:none;padding:4px 10px;border-radius:4px;font-family:'Space Grotesk',sans-serif;transition:all .15s}
+.topbar-nav a:hover{color:#F4F4F5;background:#1E1E26}
+.topbar-nav .active{color:#F4F4F5;background:#1E1E26}
+.topbar-right{font-size:.7rem;color:#52525B;font-family:'Space Grotesk',sans-serif}
 
-/* ── Layout ── */
-.page{max-width:1100px;margin:0 auto;padding:8px 24px 60px}
+/* ── Date Nav ── */
+.datebar{max-width:1100px;margin:0 auto;padding:14px 24px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.datebar .date{font-family:'Space Grotesk',sans-serif;font-size:.8rem;color:#71717A;font-weight:600;letter-spacing:.03em}
+.datebar a{font-size:.75rem;color:#3B82F6;text-decoration:none;font-family:'Space Grotesk',sans-serif}
+.datebar a:hover{text-decoration:underline}
 
 /* ── Section ── */
-.sec{padding:28px 0;border-bottom:1px solid #161620}
-.sec:last-of-type{border-bottom:none}
-.sec-header{display:flex;align-items:baseline;gap:8px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid #1a1a26}
-.sec-stripe{display:inline-block;width:3px;height:14px;border-radius:2px;flex-shrink:0;align-self:center}
-.sec-icon{font-size:.95rem}
-.sec-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:#e8e8f0}
-.sec-tag{font-size:.72rem;color:#374151;font-style:italic;margin-left:2px}
+.section{max-width:1100px;margin:0 auto;padding:24px 24px 0}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid #1E1E26}
+.section-icon{font-size:1.1rem}
+.section-name{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A1A1AA}
+.section-tagline{font-size:.78rem;color:#52525B;font-style:italic;margin-left:auto}
+.section-sep{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-sep hr{border:none;border-top:1px solid #1E1E26;margin:8px 0}
 
-/* ── Two-column grid ── */
-.sec-grid{display:grid;grid-template-columns:2fr 1fr;gap:28px}
-@media(max-width:700px){.sec-grid{grid-template-columns:1fr}}
+/* ── Two-Column Layout ── */
+.story-grid{display:grid;grid-template-columns:1fr 340px;gap:24px}
+@media(max-width:800px){.story-grid{grid-template-columns:1fr}}
 
-/* ── Featured stories (left col) ── */
-.featured article{padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #161620}
-.featured article:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.feat-title{font-family:'Fraunces',serif;font-size:.98rem;font-weight:700;line-height:1.3;margin-bottom:5px}
-.feat-title a{color:#dcdce8;text-decoration:underline;text-decoration-color:#252535;text-underline-offset:3px;transition:color .15s,text-decoration-color .15s}
-.feat-title a:hover{color:#a78bfa;text-decoration-color:#a78bfa}
-.feat-summary{font-size:.79rem;color:#6b7280;line-height:1.6;margin-bottom:7px}
-.feat-byline{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:5px}
-.feat-source{font-size:.67rem;color:#4b5563;font-family:'Space Grotesk',sans-serif}
-.feat-cat{font-size:.59rem;font-weight:700;letter-spacing:.07em;padding:2px 6px;border-radius:3px;font-family:'Space Grotesk',sans-serif}
-.feat-why{font-size:.72rem;color:#4b5563;font-style:italic;border-left:2px solid #1e1e30;padding-left:8px;line-height:1.45;margin-top:4px}
+/* ── Featured Stories (Left Column) ── */
+.featured{}
+.featured-story{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid #16161C}
+.featured-story:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.featured-headline{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;color:#F4F4F5;line-height:1.3;margin-bottom:6px}
+.featured-headline a{color:#F4F4F5;text-decoration:underline;text-decoration-color:#3B82F6;text-underline-offset:3px}
+.featured-headline a:hover{color:#FFF;text-decoration-color:#60A5FA}
+.featured-body{font-size:.82rem;color:#71717A;line-height:1.6;margin-bottom:8px}
+.featured-meta{display:flex;align-items:center;gap:8px;font-size:.7rem;color:#52525B}
+.featured-meta .source{color:#3B82F6;font-weight:600;text-decoration:none;font-family:'Space Grotesk',sans-serif}
+.featured-meta .source:hover{text-decoration:underline}
+.featured-meta .cat-tag{padding:2px 7px;border-radius:3px;font-size:.6rem;font-weight:600;letter-spacing:.04em;font-family:'Space Grotesk',sans-serif;text-transform:uppercase}
 
-/* ── River (right col) ── */
-.river{border-left:1px solid #161620;padding-left:20px}
-.river-hdr{font-size:.62rem;font-weight:700;letter-spacing:.12em;color:#374151;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:10px}
-.ritem{margin-bottom:9px;padding-bottom:9px;border-bottom:1px solid #111118}
-.ritem:last-of-type{border-bottom:none;margin-bottom:0;padding-bottom:0}
-.ritem-title{font-size:.78rem;color:#9ca3af;text-decoration:none;line-height:1.35;display:block;margin-bottom:2px;transition:color .15s}
-.ritem-title:hover{color:#e8e8f0}
-.ritem-src{font-size:.64rem;color:#374151;font-family:'Space Grotesk',sans-serif}
+/* ── River (Right Column) ── */
+.river{}
+.river-head{font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F3F46;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid #1E1E26}
+.river-item{padding:8px 0;border-bottom:1px solid #111116;font-size:.8rem;line-height:1.45}
+.river-item:last-child{border-bottom:none}
+.river-item a.headline{color:#D4D4D8;text-decoration:none}
+.river-item a.headline:hover{color:#F4F4F5;text-decoration:underline}
+.river-item .source{color:#52525B;font-size:.7rem;margin-left:6px;font-family:'Space Grotesk',sans-serif}
+.river-item .time{color:#3F3F46;font-size:.65rem;margin-left:4px}
 
-/* ── Signals section ── */
-.signals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
-.sig-card{background:#0a0a10;border:1px solid #1a1a26;border-radius:5px;padding:14px}
-.sig-name{font-family:'Fraunces',serif;font-size:.9rem;font-weight:700;color:#e8e8f0;margin-bottom:5px}
-.sig-badge{font-size:.58rem;font-weight:700;padding:2px 6px;border-radius:3px;font-family:'Space Grotesk',sans-serif;margin-bottom:7px;display:inline-block}
-.sig-desc{font-size:.75rem;color:#6b7280;margin-bottom:9px;line-height:1.5}
-.sig-qs{list-style:none;padding:0}
-.sig-qs li{font-size:.71rem;color:#4b5563;padding:3px 0 3px 10px;border-bottom:1px solid #111118;position:relative;line-height:1.4}
-.sig-qs li::before{content:'›';position:absolute;left:0;color:#374151}
-.sig-qs li:last-of-type{border-bottom:none}
+/* ── Signals (special) ── */
+.signals-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.signal-block{padding:16px;background:#111116;border:1px solid #1E1E26;border-radius:8px}
+.signal-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.85rem;color:#F4F4F5;margin-bottom:6px}
+.signal-desc{font-size:.78rem;color:#71717A;line-height:1.5;margin-bottom:8px}
+.signal-strength{font-size:.6rem;font-weight:700;letter-spacing:.06em;padding:2px 8px;border-radius:3px;font-family:'Space Grotesk',sans-serif;display:inline-block}
+.signal-questions{list-style:none;margin-top:8px}
+.signal-questions li{font-size:.75rem;color:#52525B;padding:4px 0;padding-left:14px;position:relative}
+.signal-questions li::before{content:'→';position:absolute;left:0;color:#3B82F6}
 
-/* ── Fallback ── */
-.nodata{font-size:.78rem;color:#374151;font-style:italic;padding:12px 0}
-
-/* ── Archive block ── */
-.archive-block{margin-top:40px;padding:20px;background:#090910;border:1px solid #161620;border-radius:5px}
-.archive-title{font-size:.63rem;font-weight:700;letter-spacing:.12em;color:#374151;text-transform:uppercase;font-family:'Space Grotesk',sans-serif;margin-bottom:12px}
-.archive-links{display:flex;gap:5px;flex-wrap:wrap}
-.archive-links a{font-size:.68rem;color:#374151;text-decoration:none;padding:3px 8px;border:1px solid #1a1a26;border-radius:3px;font-family:'Space Grotesk',sans-serif;transition:color .15s,border-color .15s}
-.archive-links a:hover{color:#9ca3af;border-color:#2e2e44}
+/* ── Archive ── */
+.archive-section{max-width:1100px;margin:0 auto;padding:28px 24px;border-top:1px solid #1E1E26}
+.archive-label{font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#3F3F46;margin-bottom:10px}
+.archive-links{display:flex;flex-wrap:wrap;gap:6px}
+.archive-links a{font-size:.72rem;color:#52525B;text-decoration:none;padding:4px 10px;background:#111116;border:1px solid #1E1E26;border-radius:4px;font-family:'Space Grotesk',sans-serif;transition:all .15s}
+.archive-links a:hover{color:#F4F4F5;border-color:#3B82F6}
 
 /* ── Footer ── */
-.footer{padding:18px 24px;border-top:1px solid #161620;font-size:.66rem;color:#2d3748;display:flex;justify-content:space-between;max-width:1100px;margin:0 auto}
-.footer a{color:#2d3748;text-decoration:none}
+.footer{max-width:1100px;margin:0 auto;padding:20px 24px;border-top:1px solid #1E1E26;font-size:.65rem;color:#27272A;font-family:'Space Grotesk',sans-serif;text-align:center;margin-top:20px}
+
+/* ── No Data ── */
+.no-data{font-size:.8rem;color:#3F3F46;font-style:italic;padding:20px 0}
 </style>
 </head>
 <body>
-<nav class="topbar">
-  <span class="topbar-brand">Helix Lab</span>
-  <span class="topbar-date">2026-05-01</span>
-  <div class="quicklinks"><a href="#x-scan">📊 Market Intelligence</a> <a href="#competitive">⚔️ Competitive Landscape</a> <a href="#moonshots">🚀 Strategic Moonshots</a> <a href="#signals">🎯 Lead Signals</a> <a href="#research">🔬 Research Digest</a> <a href="#helix-loop">🧬 Helix Loop</a></div>
-  <div class="topbar-nav"><a href="archive/2026-05/2026-05-01/index.html">&#8592; 2026-05-01</a><a href="archive/index.html">Archive</a></div>
-</nav>
-<div class="page">
-<section class="sec"><div class="sec-header" id="signals">
-  <span class="sec-stripe" style="background:#BE185D"></span>
-  <span class="sec-icon">🎯</span>
-  <span class="sec-name">Lead Signals</span>
-  <span class="sec-tag">&nbsp;·&nbsp;BD signal framework for qualifying AI transformation prospects</span>
-</div><div class="signals-grid"><div class="sig-card">
-  <div class="sig-name">CAIO / Chief AI Officer Created</div>
-  <span class="sig-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">STRONG</span>
-  <p class="sig-desc">New C-suite role specifically created for AI leadership, signaling strategic prioritisation at the highest level.</p>
-  <ul class="sig-qs"><li>When did you establish your Chief AI Officer role, and what's the mandate?</li><li>How is the CAIO structured to report — directly to CEO or CTO?</li><li>What budget authority does the CAIO have?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Explicit AI-First Public Mandate</div>
-  <span class="sig-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">STRONG</span>
-  <p class="sig-desc">CEO or board has explicitly stated AI as a strategic priority in public communications such as earnings calls, investor days, or press interviews.</p>
-  <ul class="sig-qs"><li>Can you share how your CEO articulated the AI strategy publicly?</li><li>What's the timeline attached to your AI-first commitment?</li><li>How is the board measuring progress against this mandate?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Board Pressure / Board Directors Talking About AI</div>
-  <span class="sig-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">STRONG</span>
-  <p class="sig-desc">Board-level conversations about AI strategy appearing in board materials, AGM discussions, or board director LinkedIn activity.</p>
-  <ul class="sig-qs"><li>How frequently is AI appearing on your board agenda?</li><li>Which board directors are driving the AI conversation?</li><li>What board-level AI initiatives have been approved recently?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">New CEO with AI Mandate</div>
-  <span class="sig-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">STRONG</span>
-  <p class="sig-desc">A new CEO (appointed within 12-18 months) with a track record of AI transformation or who has signalled AI as a priority in their mandate.</p>
-  <ul class="sig-qs"><li>What's your CEO's vision for AI transformation?</li><li>How does the board's mandate to the CEO reference AI?</li><li>What legacy systems is the new leadership looking to replace?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Internal AI Platform Team (Building Not Buying)</div>
-  <span class="sig-badge" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">STRONG</span>
-  <p class="sig-desc">Evidence of 10+ engineers building internal AI infrastructure including RAG systems, agents, and embedding pipelines.</p>
-  <ul class="sig-qs"><li>What's the size and structure of your internal AI platform team?</li><li>What internal AI infrastructure are you building?</li><li>Where are the gaps where external partners could accelerate delivery?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">AI Talent Hiring Spree</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Significant increase in AI-specific hires including prompt engineers, AI architects, and ML engineers within a 6-month period.</p>
-  <ul class="sig-qs"><li>How many AI roles have you hired in the last 6 months?</li><li>What's your AI talent strategy — build, buy, or partner?</li><li>Where are the biggest gaps in your AI capability right now?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Process Redesign Evidence</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Evidence of eliminated old workflows and creation of new AI-native processes documented in company communications.</p>
-  <ul class="sig-qs"><li>Which processes have you redesigned around AI?</li><li>What's the ROI you've seen from process transformation?</li><li>Which workflows are still manual that you'd like to automate?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">AI Integrator Partnerships</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Working with AI consultancies or system integrators rather than just purchasing SaaS tools — indicates a strategic rather than tactical approach.</p>
-  <ul class="sig-qs"><li>Which AI partners and integrators are you working with?</li><li>What has been the outcome of those partnerships?</li><li>Where have you found gaps in external support?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Significant AI Budget Increase</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Year-over-year increase of 50% or more in AI-related spending, indicating strategic commitment and resource allocation.</p>
-  <ul class="sig-qs"><li>What's your YOY AI budget growth?</li><li>How is your AI budget allocated across build vs buy vs partner?</li><li>What stops you from investing more?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Government Policy Signals</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Politicians or bureaucrats making AI announcements that affect the company's sector, creating urgency and regulatory response requirements.</p>
-  <ul class="sig-qs"><li>How is recent government policy affecting your AI strategy?</li><li>Are there regulatory compliance requirements driving your AI investment?</li><li>What government support programs are you accessing?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Industry Disruption Indicators</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">The company's sector is experiencing AI-driven disruption through new entrants, margin compression, or customer behaviour shifts.</p>
-  <ul class="sig-qs"><li>How is AI disrupting your industry right now?</li><li>What's the competitive threat from AI-native entrants?</li><li>Which competitor moves are forcing your hand?</li></ul>
-</div><div class="sig-card">
-  <div class="sig-name">Competitor AI Moves</div>
-  <span class="sig-badge" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">MEDIUM</span>
-  <p class="sig-desc">Key competitors announcing AI initiatives, gaining market share through AI advantages, or publicly committing to AI transformation.</p>
-  <ul class="sig-qs"><li>Which competitors are you watching on AI?</li><li>What's driving urgency relative to competitor activity?</li><li>What's your competitive differentiation strategy against AI-enabled rivals?</li></ul>
-</div></div></section><section class="sec"><div class="sec-header" id="research">
-  <span class="sec-stripe" style="background:#D97706"></span>
-  <span class="sec-icon">🔬</span>
-  <span class="sec-name">Research Digest</span>
-  <span class="sec-tag">&nbsp;·&nbsp;Enterprise AI moves beyond chatbots toward full-stack operational simulation, with programmable company replicas enabling crisis training, agent governance, and what-if planning at scale.</span>
-</div><div class="featured"><article>
-  <h3 class="feat-title"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" rel="noopener">VEI Proposes Programmable Enterprise Replicas for AI Agent Training and Governance</a></h3>
-  <p class="feat-summary">A new architectural paradigm called Virtual Enterprise Intelligence (VEI) proposes building fully programmable replicas of a company's entire operational stack — including Slack channels, email threads, ticket queues, CRM pipelines, and doc…</p>
-  <div class="feat-byline"><span class="feat-cat" style="background:#4F46E522;color:#4F46E5;border:1px solid #4F46E544">TOOLS</span> <span class="feat-source">GitHub</span></div><div class="feat-why">The Helix Lab operates at the intersection of AI strategy and execution — VEI's approach to structured agent governance and simulation-based evaluation provides a potential architectural foundation for client AI deployments that demand verifiable, auditable, and controllable behavior across enterprise workflows.</div>
-</article><article>
-  <h3 class="feat-title"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" rel="noopener">Enron Dataset Revived as Flagship VEI Demonstration for Historical What-If Analysis</a></h3>
-  <p class="feat-summary">VEI's authors showcase their framework using the complete Enron email corpus — over 600,000 normalized messages compiled into Rosetta event tables — as a historical case study for what-if simulation. Because Enron's collapse is one of the m…</p>
-  <div class="feat-byline"><span class="feat-cat" style="background:#BE185D22;color:#BE185D;border:1px solid #BE185D44">SIGNALS</span> <span class="feat-source">GitHub</span></div><div class="feat-why">For The Helix Lab's advisory practice, the Enron use case signals a growing industry interest in simulation-based risk training — a capability that could become a premium consulting offering as enterprises seek to prepare leadership teams for AI-mediated crisis scenarios without exposing live systems.</div>
-</article><article>
-  <h3 class="feat-title"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" rel="noopener">Enterprise AI Shifts From Chatbots to Knowledge-Brain Architectures With Actionable Artifacts</a></h3>
-  <p class="feat-summary">Beyond simulation, VEI introduces a unified Knowledge Brain layer that treats notes, transcripts, pricing guides, SOPs, and deliverables as first-class citizens within the same runtime as operational actions. This means proposal drafting an…</p>
-  <div class="feat-byline"><span class="feat-cat" style="background:#7C3AED22;color:#7C3AED;border:1px solid #7C3AED44">PRODUCT</span> <span class="feat-source">GitHub</span></div><div class="feat-why">The Helix Lab's product strategy explorations should monitor this convergence of knowledge management and agentic action — organizations increasingly expect AI systems that operate as co-pilots within existing operational contexts rather than isolated query-response tools.</div>
-</article></div></section>
-<div class="archive-block"><div class="archive-title">Previous Briefs</div><div class="archive-links"><a href="archive/2026-05/2026-05-01/index.html">2026-05-01</a><a href="archive/2026-04/2026-04-26/index.html">2026-04-26</a><a href="archive/2026-04/2026-04-25/index.html">2026-04-25</a><a href="archive/2026-04/2026-04-24/index.html">2026-04-24</a><a href="archive/2026-04/2026-04-23/index.html">2026-04-23</a><a href="archive/2026-04/2026-04-22/index.html">2026-04-22</a><a href="archive/2026-04/2026-04-21/index.html">2026-04-21</a><a href="archive/2026-04/2026-04-20/index.html">2026-04-20</a><a href="archive/2026-04/2026-04-19/index.html">2026-04-19</a><a href="archive/2026-04/2026-04-18/index.html">2026-04-18</a><a href="archive/2026-04/2026-04-17/index.html">2026-04-17</a><a href="archive/2026-04/2026-04-16/index.html">2026-04-16</a><a href="archive/2026-04/2026-04-15/index.html">2026-04-15</a></div></div>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span class="logo">HELIX <span class="logo-accent">MORNING</span></span>
+      <div class="topbar-nav">
+        <a href="#x-scan" class="active">Intel</a>
+        <a href="#competitive">Compete</a>
+        <a href="#moonshots">Moonshots</a>
+        <a href="#signals">Signals</a>
+        <a href="#research">Research</a>
+        <a href="#helix-loop">Loop</a>
+      </div>
+    </div>
+    <div class="topbar-right">Friday, May 01, 2026</div>
+  </div>
+</div><div class="datebar"><span class="date">TODAY</span> <a href="archive/2026-05/2026-05-01/index.html">← Yesterday</a></div><div class="section" id="x-scan">
+  <div class="section-header">
+    <span class="section-icon">📊</span>
+    <span class="section-name">Market Intelligence</span>
+  </div>
+  <div class="no-data">No data available today.</div>
 </div>
-<footer class="footer">
-  <span>Helix Lab Intelligence &middot; 2026-05-01</span>
-  <a href="https://gh-magazine.vercel.app">helix-morning.pages.dev</a>
-</footer>
+<div class="section-sep"><hr></div><div class="section" id="competitive">
+  <div class="section-header">
+    <span class="section-icon">⚔️</span>
+    <span class="section-name">Competitive Landscape</span>
+  </div>
+  <div class="no-data">No data available today.</div>
+</div>
+<div class="section-sep"><hr></div><div class="section" id="moonshots">
+  <div class="section-header">
+    <span class="section-icon">🚀</span>
+    <span class="section-name">Strategic Moonshots</span>
+  </div>
+  <div class="no-data">No data available today.</div>
+</div>
+<div class="section-sep"><hr></div><div class="section" id="signals"><div class="section-header"><span class="section-icon">🎯</span><span class="section-name" style="color:#EC4899">Lead Signals</span><span class="section-tagline">BD signal framework for qualifying AI transformation prospects</span></div><div class="signals-grid"><div class="signal-block"><span class="signal-strength" style="background:#10B98118;color:#10B981">STRONG</span> <span class="signal-name">CAIO / Chief AI Officer created</span><div class="signal-desc">New C-suite role specifically for AI indicates strategic commitment and board-level priority for AI transformation.</div><ul class="signal-questions"><li>When did you create the CAIO role and what's the mandate?</li><li>How is the CAIO structured within the executive team?</li><li>What's the CAIO's budget and reporting line?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#10B98118;color:#10B981">STRONG</span> <span class="signal-name">Explicit AI-first public mandate</span><div class="signal-desc">CEO or board explicitly stated AI as strategic priority in public communications such as earnings calls, investor days, or press interviews.</div><ul class="signal-questions"><li>Can you share what the CEO's public AI mandate looks like?</li><li>What's the timeline attached to this AI-first commitment?</li><li>How is success measured against this mandate?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#10B98118;color:#10B981">STRONG</span> <span class="signal-name">Board pressure on AI strategy</span><div class="signal-desc">Board-level conversations about AI strategy, AI initiatives appearing in board materials, or board directors actively discussing AI transformation.</div><ul class="signal-questions"><li>How active is the board in AI strategy discussions?</li><li>What AI-specific board materials or updates are being produced?</li><li>Has the board set AI transformation targets or milestones?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#10B98118;color:#10B981">STRONG</span> <span class="signal-name">New CEO with AI mandate</span><div class="signal-desc">New CEO (within 12-18 months) with a track record of AI transformation or who has explicitly signaled AI as a priority mandate.</div><ul class="signal-questions"><li>What's the new CEO's background with AI transformation?</li><li>What did the mandate letter or onboarding priority say about AI?</li><li>How is the new CEO approaching legacy technology decisions?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#10B98118;color:#10B981">STRONG</span> <span class="signal-name">Internal AI platform team (building not buying)</span><div class="signal-desc">Engineering team of 10+ building internal AI infrastructure including RAG systems, agents, embeddings pipelines, or custom LLM implementations.</div><ul class="signal-questions"><li>What's driving the decision to build rather than buy AI capabilities?</li><li>What's the size and structure of the internal AI platform team?</li><li>What does the AI platform roadmap look like for the next 12 months?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">AI talent hiring spree</span><div class="signal-desc">5+ AI-specific hires in 6 months including prompt engineers, AI architects, ML engineers, or data scientists.</div><ul class="signal-questions"><li>What's driving the AI hiring surge—specific projects or general capability building?</li><li>How many AI roles are you targeting to hire in the next 12 months?</li><li>What's the integration approach—centralized team or embedded in business units?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">Process redesign evidence</span><div class="signal-desc">Evidence of eliminated old workflows and creation of new AI-native processes that fundamentally change how work gets done.</div><ul class="signal-questions"><li>What legacy processes have been eliminated or redesigned for AI?</li><li>How are you measuring the impact of process changes?</li><li>What's the change management approach for AI-driven process transformation?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">AI integrator partnerships</span><div class="signal-desc">Working with AI consultancies, system integrators, or transformation partners rather than just buying standalone SaaS tools.</div><ul class="signal-questions"><li>What AI consulting or integration partners are you working with?</li><li>What's the scope of those partnerships—strategy, implementation, or both?</li><li>What capability gaps are you looking partners to fill?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">Significant AI budget increase</span><div class="signal-desc">50%+ year-over-year increase in AI budget or new AI-specific capital allocation.</div><ul class="signal-questions"><li>What's driving the significant budget increase—new mandates or scaling existing work?</li><li>How is the AI budget structured—capital vs operating?</li><li>What percentage of total IT or corporate budget does AI represent?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">Government policy signals</span><div class="signal-desc">Politicians or bureaucrats making AI announcements, regulations, or policy changes that affect the company's sector, creating urgency to respond.</div><ul class="signal-questions"><li>How is recent government AI policy affecting your sector?</li><li>What compliance or regulatory requirements are driving AI investment?</li><li>Are there government incentives or funding programs you're accessing for AI?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">Industry disruption indicators</span><div class="signal-desc">Company's sector is undergoing AI-driven disruption through new entrants, margin compression, or customer behavior shifts.</div><ul class="signal-questions"><li>How is AI disruption affecting your sector right now?</li><li>What are the competitive threats driving your AI interest?</li><li>How are peers and competitors responding to sector disruption?</li></ul></div><div class="signal-block"><span class="signal-strength" style="background:#F59E0B18;color:#F59E0B">MEDIUM</span> <span class="signal-name">Competitor AI moves</span><div class="signal-desc">Key competitors announcing AI initiatives, gaining market share through AI advantages, or differentiating on AI capabilities.</div><ul class="signal-questions"><li>What are your key competitors doing with AI?</li><li>Have you seen market share shifts due to competitor AI initiatives?</li><li>How are you positioning against competitor AI capabilities?</li></ul></div></div></div><div class="section-sep"><hr></div><div class="section" id="research"><div class="section-header"><span class="section-icon">🔬</span><span class="section-name" style="color:#F59E0B">Research Digest</span><span class="section-tagline">Virtual enterprise twins are enabling AI agents to operate, train, and govern inside realistic corporate simulations at scale.</span></div><div class="story-grid"><div class="featured"><div class="featured-story"><div class="featured-headline"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank">VEI Proposes Programmable Enterprise Twins — A Full-Stack Corporate Simulation Layer</a></div><div class="featured-body">Virtual Enterprise Intelligence (VEI) introduces the concept of a programmable replica of an entire company's operational software stack, including working Slack channels, email threads, ticket queues, CRM pipelines, and knowledge graphs. Rather than simulating a simplified abstraction, VEI builds a fully functioning twin that mirrors real enterprise tooling—agents or humans can then operate inside this simulation to play crisis scenarios, train on traces, draft grounded proposals, or steer live activity.</div><div class="featured-meta"><span class="cat-tag" style="background:#6366F118;color:#6366F1">tools</span><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" class="source">GitHub</a> <a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" style="color:#6366F1;font-size:.72rem;text-decoration:none;margin-left:auto;font-family:'Space Grotesk',sans-serif">🔗 Read</a></div></div><div class="featured-story"><div class="featured-headline"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank">Enron Email Dataset Becomes Flagship VEI Case Study for Historical What-If Analysis</a></div><div class="featured-body">The VEI project uses real Enron email data (600K+ emails normalized into Rosetta event tables) as its flagship demonstration, leveraging the most analyzed corporate collapse in history where 'what actually happened' is well-documented. This enables the project to showcase the 'Sandbox / What-if' mode—forking the historical world, changing policy or actions, and comparing alternate futures against known ground truth.</div><div class="featured-meta"><span class="cat-tag" style="background:#F59E0B18;color:#F59E0B">strategy</span><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" class="source">GitHub</a> <a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" style="color:#F59E0B;font-size:.72rem;text-decoration:none;margin-left:auto;font-family:'Space Grotesk',sans-serif">🔗 Read</a></div></div><div class="featured-story"><div class="featured-headline"><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank">Four-Mode Architecture Positions VEI as Infrastructure for Agent Governance and Evaluation</a></div><div class="featured-body">VEI's architecture is explicitly designed around four operational modes that address different stages of the agent lifecycle: Test/Eval for scoring agents against fixed scenarios, Governor/Control for placing the twin between agents and live systems to govern and record activity, Sandbox/What-if for exploring alternate futures, and Train/Data for turning execution traces into RL-friendly training data. This multi-mode design suggests VEI is targeting the full pipeline from agent development through deployment monitoring—a vertically integrated solution for organizations building autonomous agents that need provenance, rollback, and scoring.</div><div class="featured-meta"><span class="cat-tag" style="background:#6366F118;color:#6366F1">tools</span><a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" class="source">GitHub</a> <a href="https://github.com/Strange-Lab-AI/vei/tree/codex/local-standing-company-experiments" target="_blank" style="color:#6366F1;font-size:.72rem;text-decoration:none;margin-left:auto;font-family:'Space Grotesk',sans-serif">🔗 Read</a></div></div></div><div class="river"><div class="no-data" style="font-size:.75rem">—</div></div></div></div><div class="section-sep"><hr></div><div class="section" id="helix-loop">
+  <div class="section-header">
+    <span class="section-icon">🧬</span>
+    <span class="section-name">Helix Loop</span>
+  </div>
+  <div class="no-data">No data available today.</div>
+</div>
+<div class="section-sep"><hr></div><div class="archive-section"><div class="archive-label">Previous Briefings</div><div class="archive-links"><a href="archive/2026-05/2026-05-01/index.html">2026-05-01</a><a href="archive/2026-04/2026-04-26/index.html">2026-04-26</a><a href="archive/2026-04/2026-04-25/index.html">2026-04-25</a><a href="archive/2026-04/2026-04-24/index.html">2026-04-24</a><a href="archive/2026-04/2026-04-23/index.html">2026-04-23</a><a href="archive/2026-04/2026-04-22/index.html">2026-04-22</a><a href="archive/2026-04/2026-04-21/index.html">2026-04-21</a><a href="archive/2026-04/2026-04-20/index.html">2026-04-20</a><a href="archive/2026-04/2026-04-19/index.html">2026-04-19</a><a href="archive/2026-04/2026-04-18/index.html">2026-04-18</a><a href="archive/2026-04/2026-04-17/index.html">2026-04-17</a><a href="archive/2026-04/2026-04-16/index.html">2026-04-16</a><a href="archive/2026-04/2026-04-15/index.html">2026-04-15</a></div></div><div class="footer">Helix Lab Morning Intelligence · 2026-05-01 · Auto-generated</div>
 </body>
 </html>
